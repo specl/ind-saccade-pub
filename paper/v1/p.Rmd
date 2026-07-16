@@ -1,0 +1,331 @@
+---
+title             : "Does The Antisaccade Task Measure Cognitive Control?"
+shorttitle        : "Antisaccade Task"
+
+author: 
+  - name: Jeffrey N. Rouder
+    affiliation: "1"
+    corresponding: yes    # Define only one corresponding author
+    email: jrouder@uci.edu
+    address: Department of Cognitive Science, University of California, Irvine, CA, 92697
+  - name: Ava M. Ball
+    affiliation: "1"
+  - name: Anjali Thapar
+    affiliation: "2"
+
+
+affiliation       :
+  - id: 1
+    institution: University of California, Irvine
+  - id: 2
+    institution: Bryn Mawr College
+
+authornote: |
+ July, 2026
+ 
+abstract          : >
+  One of the most popular and influential measures of cognitive control is the antisaccade task, where participants identify briefly presented and subsequently masked targets at a peripheral location.  Prior to mask presentation, there is a cue at an opposing location that must be inhibited.  We assess the degree to which antisaccade accuracy reflects an inhibition component independent of other factors by comparing performance to that in a prosaccade accuracy condition.  Target durations in both tasks are adjusted with an adaptive 2-down/1-up staircase to produce constant accuracies.  Individual target durations in the antisaccade condition are highly correlated to those in the prosaccade condition across two experiments (uncorrected average, $r=.74$; disattenuated average, $r=.89$).  The conclusion is that there is very little individual variation in the contrast between antisaccade and prosaccade tasks.  This finding implies that neither is likely a good cognitive control measure.
+  
+keywords          : "cognitive control, inhibition, antisaccade task, processing speed"
+
+bibliography      : ["zlab.bib"]
+figsintext        : no
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+lineno            : no
+
+
+class             : "man"
+header-includes:
+   - \usepackage{bm}
+   - \usepackage{pcl}
+   - \usepackage{amsmath}
+   - \usepackage{setspace}
+output            : papaja::apa6_pdf
+
+csl               : apa6.csl
+---
+```{r}
+knitr::opts_chunk$set(
+  echo = FALSE, 
+  message=FALSE, 
+  warning = FALSE)
+```  
+  
+In psychology it is common to use the related concepts of *cognitive control*, *inhibition*, *executive function*, and *self-regulation* to construct theories of attention, intelligence, working memory, development, aging, and psychopathology.  The structure of cognitive control has been a central, cross-domain topic for over three decades.  There have been a number of competing views of cognitive control.  One popular position is that cognitive control is a common, domain-general, unified concept that is engaged in many tasks [@Engle.etal.1999;@Kane.etal.2001].   Alternatives to this position come in two varieties.  One variety is a finer subdivision of these general abilities into component processes; examples are provided in @Miyake.etal.2000 and @Braver.2012. The other variety is that cognitive control does not exist in a general form; instead it is comprised of several, independent, domain-specific abilities [@Rey-Mermet.etal.2018]. 
+
+One main-line behavioral approach to exploring the structure of cognitive control is to apply latent variable models to individual performance scores.  A brief summary is as follows:  Individuals complete a battery of cognitive control exercises such as the Stroop task [@Stroop.1935], the flanker task [@Eriksen.Eriksen.1974], the antisaccade task [@Kane.etal.2001], the N-back memory task [@Cohen.etal.1994], and the stop-signal task [@Logan.Cowan.1984;@Verbruggen.etal.2019].  Then, the covariation across scores is decomposed into latent variables [@Bollen.1989;@Skrondal.Rabe-Hesketh.2004].  The relations among these latent variables purportedly reveal the underlying structure of cognitive control processes.
+
+Latent variable modeling treats all behavioral scores equivalently, regardless of whether they originate from questionnaires or randomized, controlled experiments.  This property deserves scrutiny, and it is useful to distinguish *tasks* from *measures*.  Tasks are true experiments where there are two conditions and a contrast between them.  The two conditions are constructed where the only difference between them is that the process of interest loads more highly onto one than the other.  The contrast of the conditions allows for a measure of the process free from nuisance factors.   An example is the Stroop task, where more cognitive control is needed for the incongruent than the congruent condition, and the subtraction provides a measure of cognitive control free from factors such as overall speed or motivation.  Measures are instruments that do not have conditions nor use contrasts.  Traditional cognitive-control measures include antisaccade accuracy, card-sorting performance, and accuracy on squared tasks. In all measures, performance typically reflects the composite of several skills and processes including but not limited to cognitive control.
+
+Whether measures index cognitive control is more-or-less asserted *prima facie* without recourse to experimental-manipulation logic.  Researchers who use measures rely on correlations with other purportedly similar measures to bolster interpretability.  For example, the correlation between working-memory span and antisaccade accuracy is interpreted as coming from a shared factor of cognitive control [@Unsworth.etal.2022].
+
+The antisaccade task is a popular behavioral measure of cognitive control.  It is routinely included in individual-differences studies of cognitive control with examples in @Jastrzebski.etal.2021, @Robison.etal.2026, and @Tsukahara.etal.2020.  In this paper, we provide a test of whether individual variation in the antisaccade task conceivably reflects cognitive control.  We do so by turning the antisaccade measure into a saccade-based inhibition task.
+
+Figure \@ref(fig:trial) shows a common version of the antisaccade task [@Kane.etal.2001;@Unsworth.etal.2022]. Here, the cue precedes the target, and cues and targets are presented on opposite sides of fixation. There is an automatic orientation to the cue [@Guitton.etal.1985], and this orientation response must be  successfully inhibited in order to process the target before it is masked.  In the antisaccade task, cognitive control is manifest as the ability to inhibit prepotent automatic orienting responses, and performance to the target reflects the degree of control.  In this behavioral version, where stimulus information is available only briefly before masking, the accuracy to the target serves as a suitable measure of performance. Individual differences in target accuracy are known to have good reliability and correlate moderately well with working memory, problem-solving ability, and other cognitive control measures [@Chuderski.Jastrzebski.2018;@Friedman.Miyake.2004;@Unsworth.etal.2022].  
+
+We emphasize that the antisaccade paradigm is a measure rather than a task as there is often no manipulation or contrast.  Here, we convert the paradigm into a true task by introducing a prosaccade control condition.  In the  prosaccade condition, cue and target are presented at the same location.  This condition is a control because most elements of the trial are the same including the visual stimuli, some timing elements, response requirements, and perceptual encoding.  However, cognitive control---the inhibition of the prepotent response to the cue---is not needed.  Hence, when participants are aware that they are in a prosaccade condition, as they are in the following between-block design, they have no reason to inhibit the prepotent orienting response.  Individual differences in prosaccade accuracy are expected of course, and these may reflect differences in the speed to shift gaze to the target location and the speed to process briefly-flashed stimuli.  Antisaccade accuracy presumably indexes these processes in addition to the ability to inhibit the prepotent orienting response.  The contrast between the prosaccade and antisaccade condition then may be used to isolate this control component much in the same way that the contrast between incongruent and congruent conditions is used to isolate inhibition of prepotent responses in the Stroop tasks.
+
+Researchers occasionally run prosaccade and antisaccade accuracy conditions in their experiments with the former serving as practice or filler.  Importantly, contrasts are not constructed from the conditions [e.g., @Kane.etal.2001;@Unsworth.etal.2022].  There are two exceptions: One is @Rey-Mermet.etal.2018 who tuned stimulus target duration for each participant in their antisaccade task from an adaptive staircase for a preceding prosaccade task.  This tuning serves as a control for individual differences in the ability to identify briefly flashed targets.  They then compared accuracy in each condition.  A second exception is @Frischkorn.Oberauer.2025 who ran the prosaccade, antisaccade, and other conditions with multiple contrasts defined across each.  We cover Frischkorn and Oberauer's study subsequently.
+
+There is a practical problem when prosaccade and antisaccade conditions are included in the same study: There is often no single target duration that works well for both conditions.  If the target duration is tuned for moderate performance in the prosaccade condition, then performance may be near floor in the antisaccade condition, and, if the target duration is tuned for moderate performance in the antisaccade condition, then performance may be near ceiling for the prosaccade condition.  To mitigate this problem, we used a simple adaptive staircase procedure to adjust the target duration for each individual separately in the prosaccade and antisaccade conditions.  With the 2-down/1-up procedure [@Levitt.1971;@Treutwein.1995], we were able to ascertain a characteristic target duration that corresponded to 71% accuracy for each individual in each condition.  The duration in the prosaccade condition indexes a processing speed component without inhibition of the prepotent eye-movement response; the duration in the antisaccade condition indexes a combination of processing speed and inhibition of prepotent eye-movement responses; the contrast serves as the suitable measure of cognitive control.  
+
+The key prediction is about the correlation among the prosaccade and antisaccade condition.  Of course we expect some correlation as both the prosaccade and antisaccade task tap many of the same processes, including how well individuals can process quickly flashed targets with backwards masking.  But we should not expect too high of a correlation if the antisaccade task taps inhibition and variation in this inhibition component accounts for individual differences.  But what if the correlation is quite high?  Then the antisaccade performance can be well predicted from the prosaccade performance.  In this case, it is difficult to interpret antisaccade performance as localizing inhibition of a prepotent response.  Instead the antisaccade measure should be thought of as tapping the same processes as the prosaccade condition.
+
+# Method
+
+In the following two experiments we use a blocked design in which participants performed in the same condition for a large number of trials before alternating to the other condition.  The design choice has the following advantages: (i) it limits the possibility of a carry-over effect of inhibition from antisaccade trials to prosaccade trials, (ii) it eliminates any task-switching costs, (iii) it takes shorter to run as task-indicating cues are not required, and (iv) the antisaccade condition is similar to antisaccade-accuracy measures used in cognitive-control batteries [cf., @Unsworth.etal.2004]. 
+
+The experiments were similar in many ways and serve as a conceptual replication of one another.  Experiment 1 was run at Bryn Mawr College in Spring 2022.  Experiment 2 was run at the University of California, Irvine in the Spring of 2026.  Overall Experiment 2 is the larger experiment with more participants who each performed a greater number of trials. Though there are several procedural and sample-size differences, the experiments yield the same qualitative results.
+
+## Experiment 1
+
+**Subjects.** Twenty-six students from Bryn Mawr College participated in exchange for course credit.  Although a sample size of 26 is not recommended for correlational studies in general, the resulting correlations are quite high and the subsequent analyses of uncertainty and confidence confirm that this sample size is sufficient to localize latent correlations.
+
+**Apparatus.** Participants were run individually on a PC running Windows.  The experiment was controlled by a Python 3.6 program using Psychopy 3  libraries [@Peirce.etal.2019].  The display was an ordinary 19" LCD running with a resolution of $1440 \times 900$ pixels$^2$ at a refresh rate of 75hz.
+
+**Design.** The main dependent measure of interest is the stimulus duration obtained in an adaptive staircase procedure.  The main independent variable is whether the cue is located around the target (prosaccade condition) or whether the cue is located 180$^\circ$ from the target (antisaccade condition).  This variable was manipulated within participant and was blocked so that the participant always knew whether the trial was in the prosaccade or antisaccade condition.
+
+**Procedure.**  Participants were flashed either X or M as a target on each trial, and they had to indicate whether this target was an M or an X by depressing the corresponding key on a computer keyboard.  The structure of an antisaccade trial is shown in Figure \ref{fig:trial}.  The target was placed at a certain angle relative to fixation, with all angles equally likely.  In the antisaccade task, the cue consisted of two radial segments at an angle 180$^\circ$ from the target (as shown).  For the prosaccade trials (not shown), the cue was presented at the same angle as the target.  In pilot work, we confirmed that cues were  sufficiently separated from targets as to not cause any meta-contrast masking effects.  Timing of the events are shown in Figure \ref{fig:trial} with the last blank lasting until response.   After that, participants were provided feedback.  They heard a pleasant 2-tone sequence for correct responses and a longer, lower tone for error responses.
+
+Staircasing followed a 2-down/1-up procedure where the increments were single refreshes at 75hz (13.3 ms).  Experimental blocks were comprised of 50 trials.  The initial target duration in antisaccade blocks was 120ms (9 frames); that in prosaccade blocks was 66.7 ms (5 frames).   The first two blocks were designed as practice blocks to familiarize the participant with the task.  They consisted of only 10 trials and the target duration was started at 267 ms (20 frames).  The first of these was a prosaccade block; the second was an antisaccade block.  These 2 practice blocks were followed with the four experimental blocks of 50 trials each described above; hence, there were 200 trials per individual for analysis.  The order of these 4 blocks followed an ABBA design: some participants performed an antisaccade block first, other performed a prosaccade block first.   
+
+```{R trial,fig.cap="The structure and timing of trials in Experiment 1 and 2.  Experiment 1 (left): The cues were radial line segments at a certain angle relative to fixation.  The targets were either X or M, and in the antisaccade trial, appeared opposite from the cue.  The duration of the target was staircase adjusted, and the target was followed by a sequence of two masking displays. Prosaccade trials were the same with the exception that the cue and target appeared at the same angle relative to fixation. Experiment 2 (right): The cues were a white rectangle on one side of fixation. The targets were one of nine letters, and in the prosaccade trial, the target appeared at the same location as the cue. The duration of the SOA between the cue and target presentations was staircase adjusted, and the target was followed by two subsequent masks. Antisaccade trials followed the same procedure with the exception that the cues and targets appeared on opposite sides of fixation from one another.",fig.asp=.5}
+
+source('figTrial.R')
+par(mfrow=c(1,2))
+drawTrial1()
+mtext(side=3,adj=.5,"Expt. 1",line=0)
+drawTrial2()
+mtext(side=3,adj=.5,"Expt. 2",line=0)
+```
+
+**Discards.** One participant of the 26 was discarded because their staircases across all blocks increased without reaching any steady-state. The first experimental block of 50 trials in each task was discarded because staircases were still falling to asymptotic levels.
+
+## Experiment 2
+
+Experiment 2 was largely the same as Experiment 1 with the following changes:
+
+**Subjects.** Forty-two students from University of California, Irvine participated in exchange for $12.50 for 45 minutes.
+
+**Apparatus.** The experiment was run on a PC running Windows 11 Pro and controlled by a Python 3.10 program using Psychopy 25.2.1 libraries [@Peirce.etal.2019]. The display was a BENQ 24" LCD with a resolution of $1920 \times 1080$ pixels$^2$ at a refresh rate of 165hz.
+
+**Procedure.** On each trial, participants were shown one of the 9 letters on the middle row of the American English keyboard (A, S, D, F, G, H, J, K, L), and used these keys to indicate their response.  Cues and targets were presented either to the left or right of fixation, that is, there was no angular randomization as there was in Experiment 1.  The timing of events is shown in Figure \ref{fig:trial}.  After 6 small blocks of practice comprising a total of 45 trials in each condition, participants performed 6 experimental blocks of 60 trials each.  Hence there were 360 trials per individual for analysis.  
+
+**Discards.** All participants showed staircases that behaved appropriately and none were discarded.  The first experimental block of 60 trials in each task was discarded because staircases were still falling to asymptotic levels.
+
+# Analysis and Results
+
+The conventional approach is to calculate the sample correlations between prosaccade and antisaccade conditions.  We do this next, but before doing so, we discuss why this conventional approach is flawed.  The reason is that we can only measure each individual's threshold duration imprecisely.  In all experiments there is measurement noise from limited numbers of trials, and this noise is especially pertinent in adaptive designs where the responses are dichotomous (correct/error) and the measurement of threshold is indirect.   When individual quantities are measured imprecisely---a condition known as measurement error---then sample correlations are attenuated downward toward zero [@Spearman.1904a].  @Rouder.etal.2023a and @Haaf.etal.2025 measured the size of measurement noise and its effect on correlations in cognitive control studies using Stroop, flanker, and Simon effects.  They find that measurement noise is large and its effects noteworthy.  Accordingly, sample correlation are 1/2 the magnitude of model-based disattenuated correlations.  
+
+Attenuation is particularly pernicious here because the size of the correlation, rather than whether it is significantly different from a null value, is the target.  In the next section we provide an analysis of the sample correlation knowing that it is problematic.  Then, we implement hierarchical model solution for adaptive designs from @Rouder.Mehrvarz.2026 that disattenuates the correlation.  
+
+```{r}
+source('cleanAS12.R')
+as12=cleanAS12()
+as12$durMS=as12$dur*1000/75
+source('cleanAS20.R')
+as20=cleanAS20(repo=F) # as20=cleanAS20(repo=")
+as20$durMS=as20$dur*1000/165
+# remove first full block
+as12=as12[as12$blk>3,]
+as20=as20[as20$blk>7,]
+```
+
+```{r}
+as12Dur=tapply(as12$durMS,list(as12$sub,as12$blkType),mean)
+as20Dur=tapply(as20$durMS,list(as20$sub,1-as20$cond),mean)
+```
+
+```{r scatter, fig.cap="Relationship between prosaccade and antisaccade characteristic durations across the two experiments. A. Scatter plot of durations in milliseconds for Experiment 1.  B. Scatterplot in z-score units shows the same correlation but standardized variances (Expt. 1).  C. Rotation yields proportion of variance accounted for by common and contrastive components (Expt. 1).  D-F.  Corresponding plots for Experiment 2."}
+par(mfrow=c(2,3),cex=.9,mar=c(4,4,1,1),pty='s',mgp=c(2,1,0))
+scatter1=function(dur,...){
+  top=max(dur)
+  myRange=c(0,top)
+  plot(dur,xlim=myRange,ylim=myRange,...,
+     xlab="Prosaccade ISI (ms)",
+     ylab="Antisaccade ISI (ms)")
+  abline(lm(dur[,2]~dur[,1]))
+  abline(0,1,lty=2)
+  return(cor.test(dur[,1],dur[,2]))}
+
+scatter2=function(z,...){
+  extreme=1.6*max(abs(range(as.vector(z))))
+  myRange=c(-extreme,extreme)
+  plot(z,xlim=myRange,ylim=myRange,...,
+     xlab="Prosaccade z-score",
+     ylab="Antisaccade zscore")}
+
+scatter3=function(z,...){
+  extreme=1.6*max(abs(range(as.vector(z))))
+  myRange=c(-extreme,extreme)
+  x=sqrt(2)/2*(z[,2]+z[,1])
+  y=sqrt(2)/2*(z[,2]-z[,1])
+  plot(x,y,xlim=myRange,ylim=myRange,...,
+     xlab="Common",
+     ylab="Contrast")}
+  
+as12Cor=scatter1(as12Dur,pch=21,bg='blue4')
+mtext(side=3,adj=0,cex=1.2,"A")
+scatter2(scale(as12Dur),pch=21,bg='lightblue')
+mtext(side=3,adj=0,cex=1.2,"B")
+scatter3(scale(as12Dur),pch=21,bg='lightblue')
+mtext(side=3,adj=0,cex=1.2,"C")
+as20Cor=scatter1(as20Dur,,pch=21,bg='green4')
+mtext(side=3,adj=0,cex=1.2,"D")
+scatter2(scale(as20Dur),pch=21,bg='green')
+mtext(side=3,adj=0,cex=1.2,"E")
+scatter3(scale(as20Dur),pch=21,bg='green')
+mtext(side=3,adj=0,cex=1.2,"F")
+r1=c(as12Cor$estimate,as12Cor$conf.int)
+r2=c(as20Cor$estimate,as20Cor$conf.int)
+```
+
+## Sample Correlations
+
+Mean individual staircased durations for prosaccade and antisaccade tasks are shown as scatter plots in Figure \ref{fig:scatter}. Panel A shows the results for Experiment 1. The sample correlation is  $r=`r r1[1]`$ with a 95% CI from `r r1[2]` to `r r1[3]`.   Panel D is for Experiment 2.  The sample  correlation is  $r=`r r2[1]`$ with a 95% CI from `r r2[2]` to `r r2[3]`.
+
+These values, even though they are attenuated by trial noise, are quite high indicating that much of the latency is due to common processes across the pro- and anti-saccade conditions.  To provide some context, we re-express the correlation in proportion-of-variance terms.  The goal is to characterize how much of the total variance is in common and how much is accounted for by the contrast between the two conditions.  The appropriate tool is an eigenvalue decomposition and Figure \ref{fig:scatter}B-C provides a graphical depiction for this case for Experiment 1.  Figure \ref{fig:scatter}B is the scatter in $z$-score units.  The correlation is preserved and the variance of prosaccade and antiscacade conditions is 1.0 by design.  The key to the eigenvalue decomposition is that it translates the correlation into variances through rotation.  Figure \ref{fig:scatter}C shows the rotation of z-scores into a common factor and a contrast factor.  The contrast factor here is the difference between antisaccade and prosaccade performance and best localizes cognitive control separate from other processes.  The representation in Figure \ref{fig:scatter}C is orthogonal, that is, there is no correlation.  In exchange, the variances of the components are no longer 1.0.  The variance of the common factor is $1+r$ and that of the contrast factor is $1-r$.  If there was no correlation, then these factors would explain an equal amount of variance---there is as much in common as there is in contrast.  The proportion of variance for each is $(1+r)/2$ and $(1-r)/2$, respectively.  The proportion of variance accounted for by the common and contrast factors in Experiment 1 are `r (1+r1[1])/2` and `r (1-r1[1])/2`, respectively.  The comparable plots for Experiment 2 are shown in Figure \ref{fig:scatter}D-F; the proportion of variance accounted for by the  common and contrast factors are `r (1+r2[1])/2` and `r (1-r2[1])/2`, respectively.
+
+## Hierarchical Psychophysics Model
+
+In the previous analysis, the correlations were about .7 and the proportion of variance explained by the common factor to be about .85.  Yet, these are assuredly underestimates as they do not account for attenuation from trial noise.  The solution to this problem is hierarchical modeling where trial noise, and covariation across individuals and conditions are simultaneously modeled.  Perhaps @Matzke.etal.2017 was the first to suggest this approach in the experimental psychology literature, and development in cognitive control is provided by @Rouder.Haaf.2019, @Rouder.etal.2023a, and @Rouder.Mehrvarz.2024.  @Gu.etal.2016 provide a hierarchical approach for adaptive designs, though they do not consider covariation across tasks.  @Rouder.Mehrvarz.2026 provide the development needed here---hierarchical models for adaptive designs that measure covariation across multiple tasks.
+
+Let $Y_{ijk}=0,1$ denote whether a trial was correct (1) or in error (0).  Here, $i=1,\ldots,I$ denotes individuals, $j=1,2$ denotes condition (1=prosaccade, 2=antisaccade), and $k=1,\ldots,K_{ij}$ denotes the replicate.  On each trial, there is a duration, denoted $d_{ijk}$, which effects the accuracy on a trial as follows:
+\begin{equation} \label{bernData}
+Y_{ijk} \sim \mbox{Bernoulli}(\Phi[\log d_{ijk}-\theta_{ij}]).
+\end{equation}
+In this specification, $\theta_{ij}$ is the ability of the $i$th individual in the $j$th task.  To capture covariation across tasks and individuals, these abilities are modeled jointly as correlated random effects:
+$$
+\begin{pmatrix} \theta_{i1} \\ \theta_{i2} \end{pmatrix} \sim \mbox{N}_2\left[
+\begin{pmatrix} \nu_{1} \\ \nu_{2} \end{pmatrix},
+\begin{pmatrix} \sigma^2_1 & \rho \sigma_1\sigma_2\\
+\rho \sigma_1\sigma_2 & \sigma^2_2 \end{pmatrix}
+\right].
+$$
+Prior specification is as follows: $\nu_j \sim \mbox{Normal}(0,10^2)$, $\sigma^2_j \sim \mbox{Uniform}(0,10^2)$, and $\rho \sim \mbox{Uniform}(-1,1)$.  These settings are reasonable for probit linked models with log duration in the 10-300 ms range.  Details about the form of the model and analysis may be found in @Rouder.Mehrvarz.2026.
+
+The model was analyzed in Stan, and four chains were run for 10,000 iterations each.  Divergences were on the high side (up to 5%) which necessitated the higher numbers of iterations.  Effective sample sizes were about 1/10th the nominal sizes, so that the sample has about 4000 rather than 40000 independent samples.  The bulk R-hat convergence statistic [@Vehtari.etal.2021] was below 1.02 for all parameters indicating that the initial values have little influence.  
+
+
+
+```{r,include=FALSE}
+source('mod.R')
+as12$cond=as12$blkType
+as20$Y=as.integer(as20$targ==as20$resp)
+as12$Y=as.integer(as12$isLet==as12$resp)
+
+if (!file.exists("M1E1.parquet")){
+  M1E1=runMod1(as12,M=10000)
+  writeChain(M1E1,"M1E1.parquet")}
+M1E1=readChainPars('M1E1.parquet')
+if (!file.exists("M1E2.parquet")){
+  M1E2=runMod1(as20,M=10000)
+  writeChain(M1E2,"M1E2.parquet")}
+M1E2=readChainPars('M1E2.parquet')
+```
+
+```{r convergence,eval=F}
+library(posterior)
+draws <- readChainDraws("M1E1.parquet")
+max(summarise_draws(draws, "rhat")$rhat)
+draws <- readChainDraws("M1E2.parquet")
+max(summarise_draws(draws, "rhat")$rhat)
+```
+
+```{r}
+hist1=function(rhoChain,sampleValue){
+  g=hist(rhoChain,breaks=seq(-1,1,.02),plot=F)
+  h=max(g$density)
+  hist(rhoChain,prob=T,col='lightblue4',
+     xlim=c(0,1),ylim=c(0,h*1.15),
+     breaks=seq(-1,1,.02),main="",
+     xlab="Correlation",ylab="Density",
+     border=NA)
+  axis(1)
+  segments(sampleValue,0,sampleValue,h,lty=2,lwd=2,col='darkred')
+  text(sampleValue,h*1.05,"Sample",adj=c(.75,0),col='darkred')
+  rhoMn=mean(rhoChain)
+  segments(rhoMn,0,rhoMn,h,lty=1,lwd=2,col='darkblue')
+  #text(rhoMn,h*1.05,"*",adj=c(.5,0),col='darkblue',cex=1.4)
+  priorx=c(0,1,1,1.01)
+  priory=c(.5,.5,0,0)
+  lines(priorx,priory)
+  text(0,.7,adj=c(0,0),"Prior")
+  return(rhoMn)}
+
+
+hist2=function(rhoChain,sampleValue){
+  pChain=(1-rhoChain)/2
+  pSamp=(1-sampleValue)/2
+  g=hist(pChain,breaks=seq(0,1,.01),plot=F)
+  h=max(g$density)
+  g=hist(pChain,prob=T,col='lightblue4',xlim=c(0,.4),
+     breaks=seq(0,1,.01),main="",ylim=c(0,h*1.15),
+     xlab="Proportion of Variance",ylab="Density",
+     border=NA)
+  segments(pSamp,0,pSamp,h,lty=2,lwd=2,col='darkred')
+  text(pSamp,h*1.05,"Sample",adj=c(.25,0),col='darkred')
+  pMn=mean(pChain)
+  segments(pMn,0,pMn,h,lty=1,lwd=2,col='darkblue')}
+```
+
+```{r mod1, fig.cap="Posterior of correlations and proportions of variance.  A. Correlations in Experiment 1.  B.  Proportion of variance for contrastive factor in Experiment 1.  C-D. Same plots for Experiment 2."}
+par(mfrow=c(2,2),mar=c(4,4,1,1),mgp=c(2,1,0),cex=.9)
+m1e1Rho=hist1(M1E1$rho,r1[1])
+mtext(side=3,adj=0,"A. Expt. 1")
+hist2(M1E1$rho,r1[1])
+mtext(side=3,adj=0,"B. Expt. 1")
+m1e2Rho=hist1(M1E2$rho,r2[1])
+mtext(side=3,adj=0,"C. Expt. 2")
+hist2(M1E2$rho,r2[1])
+mtext(side=3,adj=0,"D. Expt. 2")
+```
+
+```{r}
+BF1=mean(M1E1$rho>.99)/.005
+BF2=mean(M1E2$rho>.99)/.005
+```
+
+Figure \ref{fig:mod1}A shows the resulting posterior values on $\rho$, the target of interest for Experiment 1.  As can be seen, the trial-noise disattenuated correlation is even higher in value and approaches unity (posterior mean is `r m1e1Rho`).  Figure \ref{fig:mod1}B shows the proportion of variance accounted for by the contrast and it is quite small.  Figures \ref{fig:mod1}C-D show the same plots and same findings for Experiment 2 (posterior mean is `r m1e2Rho`).
+
+
+One question we may ask with the Bayesian approach is about the possibility that all of the variation is accounted for by the common factor and none that discriminates the conditions.  This result, if evidenced, is a really strong one as it rules out inhibition in antisaccade performance.  The relevant quantity is the degree to which the posterior is pushed up against the upper bound of 1.0, and we quantified this by computing the mass of $\rho$ over .99.  The relevant Bayes factor of whether the correlation amasses this high vs. no constraint on correlation is:
+$$\mbox{BF} = \frac{P(\rho>.99|\mbox{Data})}{P(\rho>.99)},
+$$
+The Bayes factor values are `r BF1` and `r BF2` for Experiments 1 and 2, respectively.  These values, while different, point to the same sentiment:  Based of the data, it remains possible that correlation is 1.0, that is, all of the variability is accounted for by the common factor.
+
+
+# Discussion
+
+There are two critical results of the above study.  First, not surprisingly, there was a large effect of condition.  Thresholds were substantially larger in the antisaccade condition than the prosaccade condition, indicating that the inhibition of the prepotent response was time consuming.  Second, even though there was a large effect, the correlation between antisaccade and prosaccade conditions were exceptionally large, perhaps approaching unity.  The amount of variation accounted for cognitive control, defined as the contrast between antisaccade and prosaccade thresholds, is surprisingly small.  This result questions to its core the interpretation of antisaccade performance as a measure of cognitive control.
+
+@Frischkorn.Oberauer.2025 provide converging evidence from a different style of study.  They use prosaccade, antisaccade, and three other conditions to isolate several processes related to saccade movement and target identification in masking.  These several conditions and processes are tied together in a hypothetical set of contrasts; none of these contrasts are as direct as our comparison of pro- vs. antisaccade.  Frischkorn and Oberauer reach a similar conclusion that we do: the antisaccade task is not a valid measure of cognitive control.  They conclude instead that the slow-down in antisaccades relates to translating cue information into target location, which is considered different in kind than cognitive control.  The correlations they observe among their contrasts are smaller than we observe.  We suspect we have the resolution to see large correlations because we have a simpler design, fewer parameters to estimate, more trials per condition, and an adaptive procedure that keeps responses maximally informative.  Their experiment and analysis is expansive and ranging; ours is direct and concise.  The two styles work well together, as they have similar results.
+
+## Limitations
+
+The one limitation of this study we are most concerned about is the conditional independence assumption implicit in Eq. (\ref{bernData}).  The assumption is that the correctness of the current trial depends only on the individual's threshold and the current duration.  Conditional independence is a fairly standard assumption. For example, it is integral to the Quest estimators of @Watson.Pelli.1983 as well as subsequent generalizations [@King-Smith.etal.1994;@Vul.etal.2010;@Watson.2017].  We are less concerned with potential biases [see @Kaernbach.2001] as we are its effects on uncertainty.    Perhaps, had we modeled additional trial-to-trial dependencies, then the posteriors would have been more broad reflecting reduced information in the data.  And, as a consequence, perhaps we should be less certain about the clumping near unity than indicated in Figure \ref{fig:mod1}.  The development of hierarchical autoregressive models is not trivial and outside the scope of this report. There are two points to ameliorate concerns: I.  To the degree autocorrelation has been studied, it may be small and diminish quickly [@Rouder.etal.2025;@Harris.etal.2014].  II.  This critique does not affect the observed correlations of .69 (Experiment 1) and .79 (Experiment 2).  Hence, readers are assured that there are high correlations among prosaccade and antisaccade tasks and that the bulk of individual variation is shared rather than contrastive. 
+
+A far less weighty concern is the size of our samples.  Some researchers may balk at the notion that correlations can be measured with $N=26$ and $N=42$ participants [@Schonbrodt.Perugini.2013].  We are unfazed for two reasons.  First, in correlation studies, the trial size is far more important than the number of individuals, as small trial sizes lead to asymptotically attenuated estimates of correlations [@Rouder.etal.2026].  That is, with small trial sizes, as one increases the number of individuals, all one does is become more confident in an estimate that is far too small.  The key to disattenuation is large numbers of trials.  Having too small numbers of individuals introduces noise and uncertainty, for sure, but not bias. On balance, when computing correlations, we would always opt for more trials and fewer individuals than the reverse. Second, we can and do characterize the resulting degrees of uncertainty with a Bayesian hierarchical model.  Notwithstanding the dispersion concern above, Bayes rule guarantees these degrees are accurate for all sizes of trials and individuals.  Limitations from $N=26$ and $N=42$ sample sizes are already baked into the proverbial cake.
+
+A more substantive concern might center motivation and other non-control-related processes that may be responsible for the positive correlation.  Of course, motivation is not control, so to the degree antisaccade indexes motivation or other non-control-related processes, it is not indexing control.  Another way of viewing the same point is that if motivation is responsible for our high correlation between saccade and antisaccade, then assuredly it and not cognitive control is responsible for high correlations between antisaccade performance, working memory, and other potential cognitive control tasks.
+
+Another substantive concern is that maybe the prosaccade as well as the antisaccade task requires control; we observe positive correlations because both index cognitive control.  We do not disagree---assuredly there is some control element to the prosaccade task.  The stipulation here is that the antisaccade task requires more control much like incongruent stimuli in Stroop tasks require more control [@Braver.2012].  The negation of this stipulation is that it takes no more control to inhibit a prepotent response in the antisaccade blocks than it does in the prosaccade blocks.  Hence, the question is whether there is more control needed in the antisaccade task thant the prosaccade task.  We think not, and this result questions to the core what cognitive control means in the paradigm.
+
+\newpage
+
+# Declarations
+
+**Conflict of Interest:** The authors declare no conlficts.
+
+**Suppport:** JNR was supported by NSF 2126976 and ONR N00014-23-1-2792.
+
+**Author Contributions:** JNR conceptualized the project, performed the model-based analysis, and wrote the text.  AMB programmed and ran Experiment 2 and edited the manuscript.  AT supervised Experiment 1 and edited the manuscript.
+
+**Open-Science Practices.**. Data from this report are available at https://raw.githubusercontent.com/amthapar/data-east/main/antiSaccade/as12/as12All.csv (Experiment 1) and https://github.com/PerceptionCognitionLab/data6/tree/main/antisaccade/as20 (Experiment 2).  An Rmarkdown script that includes the text for this document, code to analyse the experiments and typeset the figures is at .
+
+\newpage
+
+# References
+
